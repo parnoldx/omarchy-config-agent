@@ -33,3 +33,7 @@ This section lists the available components. The details for each component are 
 ### 2.3. Component: Waybar
 - **File:** `components/waybar.md`
 - **Description:** Manages the configuration and styling of the Waybar status bar for Wayland compositors like Hyprland.
+
+### 2.4. Component: Omarchy Utilities
+- **File:** `components/omarchy_utils.md`
+- **Description:** Manages Omarchy's custom helper scripts and utilities for system management, configuration, and common tasks, including those related to theming and wallpaper.
