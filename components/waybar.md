@@ -1,0 +1,35 @@
+### Component: Waybar
+- **Description:** Manages the configuration and styling of the Waybar status bar for Wayland compositors like Hyprland.
+- **Keywords:** waybar, bar, status, widget, module, config, style, css, json, clock, battery, pulseaudio, network
+- **Configuration Files:**
+  - **Primary Config (User Managed):** `~/.config/waybar/config`
+  - **Primary Style (User Managed):** `~/.config/waybar/style.css`
+  - **Installation Default (Reference, Config):** `~/.local/share/omarchy/config/waybar/config`
+  - **Installation Default (Reference, Style):** `~/.local/share/omarchy/config/waybar/style.css`
+- **Key Concepts & Syntax:**
+  - **Config File Format:** JSON (for `config` file).
+  - **Style File Format:** CSS (for `style.css` file).
+  - **Modules:** Waybar is composed of various modules (e.g., `clock`, `battery`, `pulseaudio`, `network`). Each module has specific configuration options.
+- **Validation (File):**
+  - **Config File (JSON):** `jq . {file_path}` (Success if exit code 0).
+  - **Style File (CSS - Basic Check):** `grep -v -E '^\s*//' {file_path} | awk '/{/{c++} /}/{c--} END{if(c!=0){print "Unbalanced braces"} else {print "OK"}}'`
+    - **Purpose:** Provides a very basic syntax check for unbalanced braces. It is lean but limited.
+    - **Success Condition:** Output is "OK" and exit code 0.
+    - **Note:** This is a basic check. For more robust CSS validation, a dedicated linter like `stylelint` (requires Node.js) would be necessary, but is not considered a lean, default-installed option. This check should be improved if a suitable lean alternative becomes available.
+- **Information Retrieval Hierarchy:**
+  - **Priority 1 (Direct Command Help):** `man waybar` (if available).
+  - **Priority 2 (Official Docs):** `https://github.com/Alexays/Waybar/wiki`
+  - **Priority 3 (File Introspection):** Examine Omarchy Default config/style files for existing patterns and comments.
+- **Standard Procedures:**
+  - **Procedure: Change a module setting**
+    1. Identify the target module and setting in the `config` file.
+    2. Read the user override config file (`~/.config/waybar/config`).
+    3. Modify the JSON structure to update the setting.
+    4. Pipe the modified content to the JSON validation command (`jq .`) to validate.
+  - **Procedure: Change a style setting**
+    1. Identify the target CSS selector and property in the `style.css` file.
+    2. Read the user override style file (`~/.config/waybar/style.css`).
+    3. Modify the CSS to update the setting.
+    4. Pipe the modified content to the basic CSS validation command to validate.
+  - **Procedure: Reload configuration**
+    - **Command:** `killall -SIGUSR2 waybar` (This command forces Waybar to reload its configuration and style).
