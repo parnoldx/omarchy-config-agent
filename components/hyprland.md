@@ -44,6 +44,12 @@
     - **Goal:** Confirm that a setting has been applied correctly after a reload.
     - **Command:** `hyprctl getoption [category:keyword]`
     - **Success Condition:** The output shows the new, expected value.
+  - **Procedure: Change a keybind**
+    - **Goal:** Change a keybind
+    - **Details:**
+      - If a keybind is already occupied by the defaults, you must unbind it and override the existing binding with a new bind.
+      - If you for example call a script and the script should be present information or ask the user something, you must call it if with `$terminal -e`.
+      - If you execute a GUI application, you call it with `uwsm app --the command`.
 
 ---
 
