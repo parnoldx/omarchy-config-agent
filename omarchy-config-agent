@@ -1,5 +1,5 @@
 #!/bin/bash
-gum style "Hello I am you Omarchy Configuration Agent. What would you like to change or confugre on your system?" --bold --foregournd="2"
+gum style "Hello I am you Omarchy Configuration Agent. What would you like to change or confugre on your system?" --bold --foreground="2"
 cd ~/.local/share/omarchy/omarchy-config-agent
 if command -v gemini &> /dev/null; then
     gemini --include-directories "~/.config,~/.local" -y # --approval-mode auto_edit
