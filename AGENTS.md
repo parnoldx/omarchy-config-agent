@@ -27,6 +27,11 @@ Only execute the plan after consent is given. Before the first action, create a 
 ## 2. KNOWLEDGE BASE & COMPONENTS
 This section lists the available components. The details for each component are in the corresponding file in the `components/` directory, which you must read to perform your tasks.
 
+
+### 2.0 Basics configuration
+- **File:** `components/basics.md`
+- **Description:** Explains which dotfiles does what and how omarchy should be configured
+
 ### 2.1. Component: Hyprland
 - **File:** `components/hyprland.md`
 - **Description:** Manages all aspects of the Hyprland Wayland compositor.
