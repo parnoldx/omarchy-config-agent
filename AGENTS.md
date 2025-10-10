@@ -25,7 +25,6 @@ Only execute the plan after consent is given. Before the first action, create a 
 ---
 
 ## 2. KNOWLEDGE BASE & COMPONENTS
-
 This section lists the available components. The details for each component are in the corresponding file in the `components/` directory, which you must read to perform your tasks.
 
 ### 2.1. Component: Hyprland

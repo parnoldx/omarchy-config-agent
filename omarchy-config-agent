@@ -1,8 +1,9 @@
 #!/bin/bash
-gum style "Hello I am you Omarchy Configuration Agent. What would you like to change or confugre on your system?" --bold --foreground="2"
+gum style "Hi, I am you Omarchy Configuration Agent. What would you like to change or confugre on your system?" --bold --foreground="2"
 cd ~/.local/share/omarchy/omarchy-config-agent
 export SUDO_ASKPASS=./omarchy-get-password #ability to execute sudo cmd if the user want it
 if command -v claude &> /dev/null; then
+    # what dirs should be accessible? .config .local for the start
     claude --add-dir "~/.config" --add-dir "~/.local" --dangerously-skip-permissions # --allowed-tools Edit
 elif command -v gemini &> /dev/null; then
     gemini --include-directories "~/.config,~/.local" -y # --approval-mode auto_edit

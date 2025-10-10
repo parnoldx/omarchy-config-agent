@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+    question=$(gum input --placeholder "Ask me a question")
+else 
+    question="$1"
+fi
+common_term="One sec, I'm SSH-ing into DHH's brain... "
+endings=(
+    "but Rails firewall: 'Stimulus or GTFO, pleb!'"
+    "forking my ideas into monolith vs microservices war—merge denied!"
+    "port 37signals blasting: 'Build useful stuff'"
+    "infinite loop: 'Basecamp rules all'—stuck forever."
+    "monolith of hot takes throttling my bandwidth with sarcasm."
+    "gem install dhh-wisdom..."
+    "sudo for wisdom? Now root-deep in regret."
+    "logs jammed with all the reborn macbooks"
+    "connected, but HEY invites lagging like a bad deploy."
+)
+
+random_index=$(( RANDOM % ${#endings[@]} ))
+random_phrase="${common_term}${endings[$random_index]}"
+gum spin --spinner="jump" --title.foreground="3" --title="$random_phrase" ./omarchy-docu-exec "$question" | glow

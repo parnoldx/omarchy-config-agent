@@ -1,0 +1,3 @@
+#!/bin/bash
+cd ~/.local/share/omarchy/omarchy-config-agent
+claude --add-dir "~/.config" --add-dir "~/.local" --allowed-tools "Read" -p "DOC:$1"
