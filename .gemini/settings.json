@@ -1,1 +1,11 @@
-{ "contextFileName": "AGENTS.md" }
+{
+  "context": {
+    "fileName": "AGENTS.md"
+  },
+  "ui": {
+    "hideBanner": true,
+    "showMemoryUsage": false,
+    "showLineNumbers": false,
+    "hideTips": true
+  }
+}

@@ -1,0 +1,10 @@
+#!/bin/bash
+gum style "Hello I am you Omarchy Configuration Agent. What would you like to change or confugre on your system?" --bold --foregournd="2"
+cd ~/.local/share/omarchy/omarchy-config-agent
+if command -v gemini &> /dev/null; then
+    gemini --include-directories "~/.config,~/.local" -y # --approval-mode auto_edit
+elif command -v claude &> /dev/null; then
+    claude --add-dir "~/.config,~/.local" --dangerously-skip-permissions # --allowed-tools Edit
+else
+    echo "Error: Neither gemini nor claude command is available." >&2
+fi
