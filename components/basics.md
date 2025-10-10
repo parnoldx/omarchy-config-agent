@@ -1,3 +1,7 @@
+### Config: Basics 
+- **Description:** Omarchy configuration basics, dotfiles management, and system customization guide. Learn how to configure Hyprland, Waybar, terminal settings, and customize shell aliases without modifying core system files.
+- **Keywords:** omarchy config, dotfiles, hyprland configuration, waybar setup, alacritty terminal, shell aliases, bashrc customization, configuration management, system customization
+
 Omarchy is primarily configured through dotfiles that live in ~/.config. Those are considered your files for your changes. The files that live in ~/.local/share/omarchy belong to Omarchy itself, and you ideally shouldn't be messing with those. If you need to change anything in ~/.local/share/omarchy, you should be overwriting the value in ~/.config instead.
 
 
