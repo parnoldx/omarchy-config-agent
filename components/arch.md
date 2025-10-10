@@ -21,11 +21,11 @@
 - **Standard Procedures:**
   - **Procedure: Install package**
     1. **Semantic Validation:** Use `pacman -Q <package>` to check if the package is already installed. If so, report to user and abort.
-    2. **Execution:** Execute `sudo pacman -S <package>`.
+    2. **Execution:** Execute `sudo pacman -S <package> --no-confirm`.
     3. **Verification:** Use `pacman -Q <package>` to confirm successful installation. If verification fails, initiate rollback.
   - **Procedure: Remove package**
     1. **Semantic Validation:** Use `pacman -Q <package>` to check if the package is installed. If not, report to user and abort.
-    2. **Execution:** Execute `sudo pacman -Rns <package>`.
+    2. **Execution:** Execute `sudo pacman -Rns <package> --no-confirm`.
     3. **Verification:** Use `pacman -Q <package>` (should return non-zero exit code). If verification fails, initiate rollback.
   - **Procedure: Manage service**
     1. **Semantic Validation:** Use `systemctl status <service>` to check if the service unit exists. If not, report to user and abort.

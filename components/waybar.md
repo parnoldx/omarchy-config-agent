@@ -32,4 +32,4 @@
     3. Modify the CSS to update the setting.
     4. Pipe the modified content to the basic CSS validation command to validate.
   - **Procedure: Reload configuration**
-    - **Command:** `killall -SIGUSR2 waybar` (This command forces Waybar to reload its configuration and style).
+    - **Command:** `omarchy-restart-waybar` (This command forces Waybar to reload its configuration and style).
