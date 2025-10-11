@@ -175,14 +175,14 @@ This section defines the expected syntax for complex keywords that take multiple
 - **Trigger:** This procedure MUST be used when modifying the `monitor` keyword where `<resolution>` or `<position>` arguments are changed. It MUST NOT be used for changes only to `<scale>`.
 - **Risk Level:** High (Potential for loss of video output).
 - **Workflow:**
-  1. Create the safety net (`snapper create --type pre ...`).
+  1. Create a safety net before applying changes.
   2. Apply the configuration change (write to `~/.config/hypr/monitor.conf`). Hyprland will auto-reload.
   3. **Start a 10-second timer.**
   4. **Prompt user for confirmation:** "Did the monitor configuration change work correctly? Please type 'yes' to confirm within 10 seconds."
   5. **If user confirms 'yes' within 10 seconds:**
-     - Create the post-snapshot (`snapper create --type post ...`).
+     - Finalize the safety net.
      - Report success.
   6. **If 10 seconds elapse without 'yes' confirmation:**
      - Inform the user: "No confirmation received. Initiating automatic rollback of monitor configuration."
-     - Trigger the rollback (surgical live rollback or full snapper rollback if necessary).
+     - Trigger the rollback procedure.
      - Report rollback status.
