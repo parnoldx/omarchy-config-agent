@@ -7,6 +7,10 @@ if command -v claude &> /dev/null; then
     claude --add-dir "~/.config" --add-dir "~/.local" --dangerously-skip-permissions # --allowed-tools Edit
 elif command -v gemini &> /dev/null; then
     gemini --include-directories "~/.config,~/.local" -y # --approval-mode auto_edit
+elif command -v amp &> /dev/null; then
+    amp --dangerously-allow-all #  ampcode respects theming and looks nice overall, pay per use, 10$ start credits
+elif command -v opencode &> /dev/null; then
+    opencode #  this seems to be nice, system theme support, free grok model as default but no ability afaik to read and edit outside of the actual project. Which is strange
 else
     echo "Error: Neither gemini nor claude command is available." >&2
 fi
