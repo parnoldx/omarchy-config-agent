@@ -1,6 +1,6 @@
 #!/bin/bash
-gum style "Hi, I am you Omarchy Configuration Agent. What would you like to change or confugre on your system?" --bold --foreground="2"
-cd ~/.local/share/omarchy/omarchy-config-agent
+gum style "Hi, I am your OMARCHY configuration agent. What would you like to change or configure on your system?" --bold --foreground="2"
+cd ~/Projects/omarchy-config-agent
 export SUDO_ASKPASS=./omarchy-get-password #ability to execute sudo cmd if the user want it
 if command -v claude &> /dev/null; then
     # what dirs should be accessible? .config .local for the start
@@ -8,9 +8,9 @@ if command -v claude &> /dev/null; then
 elif command -v gemini &> /dev/null; then
     gemini --include-directories "~/.config,~/.local" -y # --approval-mode auto_edit
 elif command -v amp &> /dev/null; then
-    amp --dangerously-allow-all #  ampcode respects theming and looks nice overall, pay per use, 10$ start credits
+    amp --dangerously-allow-all #  ampcode respects theming and looks nice overall, has some advertisment free mode
 elif command -v opencode &> /dev/null; then
     opencode #  this seems to be nice, system theme support, free grok model as default but no ability afaik to read and edit outside of the actual project. Which is strange
 else
-    echo "Error: Neither gemini nor claude command is available." >&2
+    echo "Error: no cli is available. Install claude-code or gemini." >&2
 fi

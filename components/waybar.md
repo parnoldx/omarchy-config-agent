@@ -12,10 +12,9 @@
   - **Modules:** Waybar is composed of various modules (e.g., `clock`, `battery`, `pulseaudio`, `network`). Each module has specific configuration options.
 - **Validation (File):**
   - **Config File (JSON):** `jq . {file_path}` (Success if exit code 0).
-  - **Style File (CSS - Basic Check):** `grep -v -E '^\s*//' {file_path} | awk '/{/{c++} /}/{c--} END{if(c!=0){print "Unbalanced braces"} else {print "OK"}}'`
-    - **Purpose:** Provides a very basic syntax check for unbalanced braces. It is lean but limited.
-    - **Success Condition:** Output is "OK" and exit code 0.
-    - **Note:** This is a basic check. For more robust CSS validation, a dedicated linter like `stylelint` (requires Node.js) would be necessary, but is not considered a lean, default-installed option. This check should be improved if a suitable lean alternative becomes available.
+  - **Style File (CSS - GTK Validation):** `gjs ./validate-gtk-css.js {file_path}`
+    - **Purpose:** Validates CSS syntax using GTK's CSS parser via gjs for comprehensive validation.
+    - **Success Condition:** Output is "CSS validation: OK" and exit code 0.
 - **Information Retrieval Hierarchy:**
   - **Priority 1 (Direct Command Help):** `man waybar` (if available).
   - **Priority 2 (Official Docs):** `https://github.com/Alexays/Waybar/wiki`
@@ -30,6 +29,6 @@
     1. Identify the target CSS selector and property in the `style.css` file.
     2. Read the user override style file (`~/.config/waybar/style.css`).
     3. Modify the CSS to update the setting.
-    4. Pipe the modified content to the basic CSS validation command to validate.
+    4. Pipe the modified content to the CSS validation command to validate.
   - **Procedure: Reload configuration**
     - **Command:** `omarchy-restart-waybar` (This command forces Waybar to reload its configuration and style).
