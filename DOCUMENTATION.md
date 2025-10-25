@@ -2,7 +2,7 @@
 Your goal is to answer the users question about OMARCHY in a suitable manner. Output must be beautiful Markdown.
 Make the answer as compact as possible and long as needed.
 
-## NOWLEDGE BASE & COMPONENTS
+## KNOWLEDGE BASE & COMPONENTS
 This section lists the available components. The details for each component are in the corresponding file in the `components/` directory, which are helpful to answer questions that regarding the components
 
 ### 2.1. Component: Hyprland
