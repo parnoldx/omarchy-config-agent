@@ -21,6 +21,10 @@ This section lists the available components. The details for each component are 
 - **File:** `components/omarchy_utils.md`
 - **Description:** Manages Omarchy's custom helper scripts and utilities for system management, configuration, and common tasks, including those related to theming and wallpaper.
 
-// more documentation etc. needed 
+### 2.5. Component: Walker
+- **File:** `components/walker.md`
+- **Description:** Manages Walker, a fast Wayland application launcher with prefix-based search for launching applications, browsing files, performing calculations, accessing emoji/symbols, clipboard history, and more.
+
+// more documentation etc. needed
 // maybe aso not the config component descriptions? it needs to read configs to answer question
 // github discussions?, discord messages?
