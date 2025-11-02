@@ -52,6 +52,16 @@ This section lists the available components. The details for each component are 
 - **File:** `components/walker.md`
 - **Description:** Manages Walker, a fast Wayland application launcher with prefix-based search for launching applications, browsing files, performing calculations, accessing emoji/symbols, clipboard history, and more.
 
+---
+
+## 3. RECIPES & EDGE CASES
+The `recipes/` directory contains specific implementation examples and edge case solutions. Consult these when users request specific features or patterns that match a recipe.
+
+### 3.1. Waybar Recipes
+- **Directory:** `recipes/waybar/`
+- **Available recipes:**
+  - `interactive-calendar.md` - Interactive calendar tooltip for clock module
+
 
 ## Styling
 - When asking for user confirmation for an action, especially for file changes, make the question prominent using Markdown blockquotes and bolding to ensure it is not missed. For example: '> **Should I proceed? (yes/no)**'

@@ -25,6 +25,13 @@ This section lists the available components. The details for each component are 
 - **File:** `components/walker.md`
 - **Description:** Manages Walker, a fast Wayland application launcher with prefix-based search for launching applications, browsing files, performing calculations, accessing emoji/symbols, clipboard history, and more.
 
+## RECIPES & EXAMPLES
+The `recipes/` directory contains specific implementation examples and edge case solutions.
+
+### Waybar Recipes
+- **Directory:** `recipes/waybar/`
+- `interactive-calendar.md` - Interactive calendar tooltip for clock module
+
 // more documentation etc. needed
 // maybe aso not the config component descriptions? it needs to read configs to answer question
 // github discussions?, discord messages?
